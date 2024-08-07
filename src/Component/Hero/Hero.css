@@ -1,0 +1,140 @@
+:root{
+    --background-color:#fff;
+    --text-color:#000;
+    --popular-color:#171717;
+    --hr-color:#252525;
+    --first-grad:#fde1ff;
+    --second-grad:#e1ffea22;
+    --grad: linear-gradient(180deg,#fde1ff ,#e1ffea22 60%);
+}
+.dark-theme{
+    --background-color:#000;
+    --text-color:#fff;
+    --popular-color:#a8a8a8;
+    --hr-color:#ff4141;
+    --grad :linear-gradient(180deg, #fde1ff 80% ,black 80%);
+}
+.hero{
+    height: 100vh;
+    background: var(--grad);
+    display: flex;
+}
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    line-height: 1.1;
+    position: relative;
+}
+.hero-left .h2-container{
+    padding-right: 150px;
+    position: absolute;
+    top: 140px;
+}
+.hero-left h2{
+    color: #090909;
+    font-size: 30px;
+    font-weight: 600;
+}
+.hero-left p{
+    color: #171717;
+    font-size: 60px;
+    font-weight: 700;
+}
+.hero-hand-icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.hero-hand-icon img{
+    width: 105px;
+}
+.hero-latest-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 310px;
+    height: 70px;
+    margin-top: 30px;
+    border-radius: 75px;
+    background-color: #ff4141;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+
+    div{
+        a{
+            text-decoration: none;
+            color: var(--text-color);
+            cursor: pointer;
+            i{
+                color: var(--text-color);
+            }
+        }
+    }
+}
+.hero-right{
+    flex: 1;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-right img{
+    width: 410px;
+}
+
+@media (max-width: 1200px) {
+    .hero-left p{
+        font-size: 50px;
+    }
+    .hero-left .h2-container{
+        padding-right: 80px;
+    }
+}
+
+@media (max-width: 950px) {
+    .hero-left p{
+        font-size: 40px;
+    }
+    .hero-right img{
+        width: 310px;
+    }
+    .hero-left .h2-container{
+        padding-right: 10px;
+    }
+}
+@media (max-width: 850px) {
+   .hero{
+        justify-content: flex-start;
+   }
+   .hero-left{
+        padding-left: 40px;
+        align-items: flex-start;
+   }
+}
+@media (max-width: 650px) {
+    .hero-left{
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+    }
+    .hero-right{
+        height: 50vh;
+    }
+    .hero-left h2{
+        display: none;
+    }
+    .hero{
+        padding-top:60px;
+        flex-direction: column;
+        min-height: 150vh;
+    }
+    .hero-right img{
+        width: 350px;
+        margin-top: 20px;
+    }
+}

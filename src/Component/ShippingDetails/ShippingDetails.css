@@ -1,0 +1,52 @@
+:root{
+    --background-color:#fff;
+    --color:#000;
+    --contColor:#f5f5f5;
+}
+.dark-theme{
+    --background-color:#000;
+    --color:#fff;
+    --contColor:#363636;
+}
+.shipping{
+    min-height: 50px;
+    padding: 5px 45px;
+    background-color: var(--background-color);
+    line-height: 40px;
+    color: var(--color);
+}
+.shipping h3{
+    margin-top: 100px;
+}
+.refresh{
+    cursor: pointer;
+}
+.shippingDetails{
+   margin: 5px 0;
+   background-color: var(--contColor);
+   border-radius: 8px;
+   flex-wrap: wrap;
+}
+.detail{
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 700;
+}
+.detail .top{
+    display: flex;
+    gap: 20px;
+    color: var(--color);
+}
+.detail .address{
+    max-width: 600px;
+    color: var(--color);
+}
+@media (max-width
+:600px) {
+    .detail .top{
+        display: flex;
+        flex-direction: column;
+    }
+}

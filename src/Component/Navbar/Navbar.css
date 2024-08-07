@@ -1,0 +1,320 @@
+:root{
+    --background-color:#fff;
+    --text-color:#000;
+    --nav-menu:#626262;
+}
+.dark-theme{
+    --background-color:#1a1a1a;
+    --text-color:#ffffff;
+    --nav-menu:#fffdfd;
+}
+body{
+    transition: 1.5;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000000000000000000000000000;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+}
+.nav-logo p{
+    color: #171717;
+    font-size: 38px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.menuicon{
+    width: 60px;
+    position: relative;
+    display: none;
+}
+.nav-menu{
+    width:max-content;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    font-weight: 600;
+}
+.menu-bar{
+    font-size: 40px;
+    align-self: center;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius:10px;
+    background-color: #ff4141;
+}
+.menu-cart{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+.nav-login-cart button{
+    width: 157px;
+    height: 58px;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    border-radius: 75px;
+    color: #515151;
+    font-size: 20px;
+    font-weight: 500;
+    background: var(--background-color);
+    cursor: pointer;
+}
+.nav-login-cart button:hover{
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+.nav-login-cart button:active{
+    background: #f3f3f3;
+}
+.nav-login-cart i{
+    font-size: 40px;
+    color: var(--text-color);
+    align-self: center;
+}
+.theme-btn{
+    cursor: pointer;
+    width: 40px;
+}
+
+.nav-card-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    font-size: 14px;
+    border-radius: 14px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+.settings{
+    display: none;
+}
+.extras{
+    display: none;
+}
+.nav-menu .links{
+    margin-top: -350px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+@media (max-width: 1200px) {
+    .nav-login-cart{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .nav-login-cart button{
+        width: 120px;
+        height: 50px;
+        outline: none;
+        border: 1px solid #7a7a7a;
+        border-radius: 75px;
+    }
+    .nav-card-count{
+        margin-top: -35px;
+        margin-left: -35px;
+    }
+    .nav-login-cart i{
+        font-size: 30px;
+        color: var(--text-color);
+        align-self: center;
+    }
+    .nav-logo p{
+        font-size: 23px;
+    }
+    .nav-login-cart button{
+        scale: 0.8;
+    }
+}
+@media (max-width: 950px) {
+    .nav-logo p{
+        font-size: 20px;
+        align-self: center;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .menuicon{
+        display: block;
+        cursor: pointer;
+        width: 10px;
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+    .icontoggle{
+        width: 10px;
+        transform: rotate(90deg);
+    }
+    .menu-cart{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .nav-menu{
+        display: none;
+        height: 89px;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background-color: var(--background-color);
+        color: var(--nav-menu);
+    }
+  
+    .nav-menu-visible{
+        display: flex;
+        top: 80px;
+        z-index: 1000000;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .menu-cart{
+        align-self: center;
+    }
+    .nav-login-cart i{
+        font-size: 28px;
+    }
+    .menu-cart button{
+        width: 80px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+}
+@media (max-width:750px) {
+    .nav-login-cart{
+        gap: 20px;
+    }
+    .nav-login-cart p{
+        font-size: 14px;
+    }
+    .nav-logo p{
+        font-size: 18px;
+        align-self: center;
+    }
+    .menu-cart button{
+        width: 70px;
+        font-size: 14px;
+        border-radius: 10px;
+        display: none;
+    }
+    .nav-card-count{
+        display: none;
+    }
+    .nav-login-cart i{
+        font-size: 24px;
+        display: none;
+    }
+    .settings{
+        display: none;
+    }
+    .theme-btn{
+        display: none;
+    }
+    .nav-menu-visible{
+        display: flex;
+        top: 72px;
+        height: auto;
+        z-index: 1000000;
+        width: 100vw;
+        padding-top: 50px;
+        margin: 0 auto;
+        left: calc(-20px);
+        text-align: right;
+        justify-content: center;
+        border-right: 1px solid red;
+        flex-direction: column;
+    }
+    .extras{
+        width: 100%;
+        text-align: left;
+        display: block;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-left: -20px;
+    }
+    .extras .theme-btn{
+        display: block;
+    }
+    .extras .nav-card-count{
+        display:block;
+        position: absolute;
+        top: 10px;
+        right: -15px;
+        padding: 5px;
+        border-radius: 50%;
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .extras i{
+        font-size: 50px;
+        display:block;
+        color: var(--text-color);
+        position: relative;
+    }
+    .extras button{
+        width: 157px;
+        height: 58px;
+        outline: none;
+        border: 1px solid #7a7a7a;
+        border-radius: 75px;
+        color: #515151;
+        font-size: 20px;
+        font-weight: 500;
+        background: var(--background-color);
+        cursor: pointer;
+        display: block;
+    }
+    .extras button:hover{
+        background-color: var(--text-color);
+        color: var(--background-color);
+    }
+}

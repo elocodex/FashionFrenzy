@@ -1,0 +1,66 @@
+:root{
+    --background-color:#fff;
+    --text-color:#454545;
+    --font-color:#171717;
+    --hr-color:#252525;
+    --first-grad:#fde1ff;
+    --second-grad:#e1ffea22;
+}
+.dark-theme{
+    --background-color:#000;
+    --text-color:#101010;
+    --font-color:#a3a3a3;
+    --hr-color:#ff4141;
+    --first-grad:#937f95;
+    --second-grad:#4f585222;
+}
+.newsletter{
+    width: 65%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0px 140px;
+    margin-bottom: 150px;
+    background:linear-gradient(180deg, var(--first-grad) 0%, var(--second-grad) 60%);
+    gap: 30px;
+}
+.newsletter h1{
+    color: var(--text-color);
+    font-size: 55px;
+    font-weight: 600;
+}
+.newsletter p{
+    color: var(--text-color);
+    font-size: 20px;
+}
+.newsletter div{
+    display: flex;
+    align-items: center;
+    background: var(--background-color);
+    justify-content: space-between;
+    width: 730px;
+    height: 70px;
+    border-radius: 80px;
+    border: 1px solid #e3e3e3;
+}
+.newsletter div button{
+    width: 210px;
+    height: 70px;
+    background-color: var(--font-color);
+    border-radius: 80px;
+    color: var(--font-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+.newsletter input{
+    width: 500px;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+    color: #616161;
+    font-family: poppins ;
+    font-size: 16px;
+}

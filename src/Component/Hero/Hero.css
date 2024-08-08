@@ -18,6 +18,7 @@
     height: 100vh;
     background: var(--grad);
     display: flex;
+    margin-top: 20px;
 }
 .hero-left{
     flex: 1;

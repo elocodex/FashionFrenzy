@@ -116,6 +116,7 @@
 }
 .productdisplay-right-category{
     margin-top: 10px;
+     color: var(--text-color);
 }
 .productdisplay-right-category span{
     font-weight: 600;

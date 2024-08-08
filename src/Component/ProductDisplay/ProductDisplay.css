@@ -13,7 +13,7 @@
     --price:#242424;
   }
   .cont{
-    margin-top: -20px;
+    padding-top: 100px;
     background-color: var(--background-color);
   }
 .productdisplay{

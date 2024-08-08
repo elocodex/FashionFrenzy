@@ -174,4 +174,7 @@
     .add label{
         font-size: 14px;
     }
+    .close{
+        padding-top: 50px;
+    }
 }

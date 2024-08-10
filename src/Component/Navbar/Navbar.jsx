@@ -74,7 +74,9 @@ const Navbar = (props) => {
         <Link to='/' style={{display:'flex',alignItems:'center'}} >
           <img src={logo} alt="" />
         </Link>
-          <p><a style={linkStyle} href="/">FashionFrenzy</a></p>
+        <Link to='/'>
+          <p><a style={linkStyle}>FashionFrenzy</a></p>
+        </Link>
       </div>
       <div className="menu-cart">
         <motion.i ref={twisticon}  onClick={dropdownToggle}  class="fa-solid fa-caret-right menuicon"></motion.i>

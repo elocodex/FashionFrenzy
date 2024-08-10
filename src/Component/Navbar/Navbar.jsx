@@ -53,6 +53,9 @@ const Navbar = (props) => {
     color: '#ff4141',
     fontWeight: '700',
   }
+    const prvent = (e)=>{
+    e.current.preventDefault()
+  }
 
     if(localStorage.getItem('auth-token')){
       fetch('https://fashionfrenzybackend.onrender.com/getusername',{
@@ -74,9 +77,7 @@ const Navbar = (props) => {
         <Link to='/' style={{display:'flex',alignItems:'center'}} >
           <img src={logo} alt="" />
         </Link>
-        <Link to='/'>
-          <p style={linkStyle}>FashionFrenzy</p>
-        </Link>
+       <p><a onClick={prvent} style={linkStyle} href="/">FashionFrenzy</a></p>
       </div>
       <div className="menu-cart">
         <motion.i ref={twisticon}  onClick={dropdownToggle}  class="fa-solid fa-caret-right menuicon"></motion.i>

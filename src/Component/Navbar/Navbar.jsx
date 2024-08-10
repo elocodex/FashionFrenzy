@@ -75,7 +75,7 @@ const Navbar = (props) => {
           <img src={logo} alt="" />
         </Link>
         <Link to='/'>
-          <p><a style={linkStyle}>FashionFrenzy</a></p>
+          <p style={linkStyle}>FashionFrenzy</p>
         </Link>
       </div>
       <div className="menu-cart">

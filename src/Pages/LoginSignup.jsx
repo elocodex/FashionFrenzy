@@ -25,12 +25,18 @@ const LoginSignup = () => {
   const changeHandler = (e)=>{
     SetFormData({...formData,[e.target.name]:e.target.value})
   }
+  
 
   const login = async()=>{
-    console.log("Login Function",formData);
-    SetLoading(true)
-    let responseData;
-    await fetch('https://fashionfrenzybackend.onrender.com/login',{
+    if(formData.email.length < 1){
+      toast.error("Email Value Cannot be Empty")
+    }else if (formData.password.length < 1){
+      toast.error("Password Value Cannot be Empty")
+    } else{
+      console.log("Login Function",formData);
+      SetLoading(true)
+      let responseData;
+      await fetch('https://fashionfrenzybackend.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/json',
@@ -49,19 +55,27 @@ const LoginSignup = () => {
       SetLoading(false)
     }else{
       setLoginStatus(false)
+      toast.error("Login Failed")
     }
-
   }
-
+}
   const signup = async()=>{
-    console.log("Signup Function",formData);
-    SetLoading(true)
-    let responseData;
-    await fetch('https://fashionfrenzybackend.onrender.com/signup',{
-      method:'POST',
-      headers:{
-        Accept:'application/json',
-        'Content-Type':'application/json'
+    if(formData.name.length < 1){
+      toast.error("Name Value Cannot be Empty")
+    }else if(formData.email.length < 1){
+      toast.error("Email Value Cannot be Empty")
+    }else if(formData.password.length < 1) {
+      toast.error("Password Value Cannot be Empty")
+    }else{
+
+      console.log("Signup Function",formData);
+      SetLoading(true)
+      let responseData;
+      await fetch('https://fashionfrenzybackend.onrender.com/signup',{
+        method:'POST',
+        headers:{
+          Accept:'application/json',
+          'Content-Type':'application/json'
       },
       body: JSON.stringify(formData)
     })
@@ -77,9 +91,11 @@ const LoginSignup = () => {
       )
     }else{
       setSignupStatus(false)
+      toast.error("Signup Failed")
     }
   }
-
+}
+  
   return (
     <div className='loginsignup'>
       <Toaster position='bottom-right' closeButton richColors />

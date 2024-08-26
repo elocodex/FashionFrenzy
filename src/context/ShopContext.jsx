@@ -48,7 +48,7 @@ const ShopContextProvider = (props) =>{
                 body:JSON.stringify({"itemId":itemId})
             })
             .then((res)=>res.json())
-            .then((data)=>console.log(data))
+            // .then((data)=>console.log(data))
         }
     }
 
@@ -66,7 +66,7 @@ const ShopContextProvider = (props) =>{
                 body:JSON.stringify({"itemId":itemId})
             })
             .then((res)=>res.json())
-            .then((data)=>console.log(data))
+            // .then((data)=>console.log(data))
         }
     }
 
@@ -92,7 +92,7 @@ const ShopContextProvider = (props) =>{
                 totalAmount += itemInfo.new_price * cartItems[item]
             }
         }
-        console.log(totalAmount);
+        // console.log(totalAmount);
         return totalAmount;
     }
 

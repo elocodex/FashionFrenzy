@@ -14,6 +14,7 @@ const LoginSignup = () => {
 
   const [loginStatus,setLoginStatus] = useState(true)
   const [signupStatus,setSignupStatus] = useState(true)
+  const[loading,SetLoading] = useState(false)
   const[state,setState] = useState("Sign Up")
   const [formData,SetFormData] = useState({
     name:"",
@@ -27,6 +28,7 @@ const LoginSignup = () => {
 
   const login = async()=>{
     console.log("Login Function",formData);
+    SetLoading(true)
     let responseData;
     await fetch('https://fashionfrenzybackend.onrender.com/login',{
       method:'POST',
@@ -44,6 +46,7 @@ const LoginSignup = () => {
       localStorage.setItem('auth-token',responseData.token)
       window.location.replace("/")
       console.log(responseData.user.name);
+      SetLoading(false)
     }else{
       setLoginStatus(false)
     }
@@ -52,6 +55,7 @@ const LoginSignup = () => {
 
   const signup = async()=>{
     console.log("Signup Function",formData);
+    SetLoading(true)
     let responseData;
     await fetch('https://fashionfrenzybackend.onrender.com/signup',{
       method:'POST',
@@ -67,12 +71,11 @@ const LoginSignup = () => {
     })
     if(responseData.success){
       localStorage.setItem('auth-token',responseData.token)
-      // window.location.replace("/")
+      SetLoading(false)
       toast.message(
-        <div>Login Succesful! <span style={spanStyle} onClick={()=>{setState("Login")}}>Login Here</span></div>
+        <div>Login Succesful! <span style={spanStyle} onClick={()=>{setState("Login")}} >Login Here</span></div>
       )
     }else{
-      // alert(responseData.error)
       setSignupStatus(false)
     }
   }
@@ -91,7 +94,7 @@ const LoginSignup = () => {
             <input name="password" required value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
           </form>
         </div>
-        <button onClick={()=>{state === "Login"?login():signup()}}>Continue</button>
+        <button onClick={()=>{state === "Login"?login():signup()}}>{loading === true ? "Loading..." : "Continue"}</button>
         {state === "Sign Up"? <p style={LinkStyle} className="loginsignup-login">
           Already Have an Account? <span onClick={()=>{setState("Login")}}>Login Here</span>
         </p>: <p style={LinkStyle} className="loginsignup-login">

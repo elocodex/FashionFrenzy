@@ -22,6 +22,7 @@
     padding-left: 80px;
     text-transform: capitalize;
     background-color: var(--background);
+    margin-top: 100px;
 }
 @media (max-width: 1000px) {
     .breadcrum{

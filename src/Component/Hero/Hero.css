@@ -116,6 +116,9 @@
         padding-left: 40px;
         align-items: flex-start;
    }
+     .hero-right img{
+        width: 250px;
+    }
 }
 @media (max-width: 650px) {
     .hero-left{

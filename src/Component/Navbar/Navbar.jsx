@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Navbar.css'
-import logo from '../../../Assets/logo.png'
+import logo from '../Assets/logo.png'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../../context/ShopContext'
 import { motion,easeInOut, AnimatePresence } from 'framer-motion'
 import { Toaster, toast } from 'sonner'
-import sunIcon from '../../../Assets/sun.png'
-import moonIcon from '../../../Assets/crescent-moon.png'
+import sunIcon from '../Assets/sun.png'
+import moonIcon from '../Assets/crescent-moon.png'
 
 const Navbar = (props) => {
   
@@ -49,8 +49,18 @@ const Navbar = (props) => {
     dropdownMenu.current.classList.toggle('nav-menu-visible')     
     dropdownMenu.current.style.transition = 2;
     twisticon.current.classList.toggle('icontoggle')
-    console.log(twisticon);
   }
+
+    const reverseToggle = () => {
+      dropdownMenu.current.classList.toggle('nav-menu-visible')     
+      dropdownMenu.current.style.transition = 2;  
+      twisticon.current.classList.toggle('icontoggle')
+    }
+
+    useEffect(() => {
+      reverseToggle();
+    }, [menu]); 
+  
  
   const linkStyle = {
     textDecoration : "none",
@@ -95,7 +105,7 @@ const Navbar = (props) => {
             <li onClick={()=>{setMenu("shop")}}><Link style={linkStyle} to='/'>Shop </Link> {menu === "shop" ? <hr />:<></>}  </li>
             <li onClick={()=>{setMenu("mens")}}> <Link style={linkStyle} to='/mens'>Men </Link> {menu === "mens" ? <hr />:<></>}</li>
             <li onClick={()=>{setMenu("womens")}}> <Link style={linkStyle} to='/womens'>Women </Link>{menu === "womens" ? <hr />:<></>}</li>
-            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kids</Link> {menu === "kids" ? <hr />:<></>}</li>
+            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kiids</Link> {menu === "kids" ? <hr />:<></>}</li>
 
           <div className='extras'>
             <Link style={linkStyle} to='/cart'><i class="fa-solid fa-cart-shopping"><div className="nav-card-count">{getTotalCartItems()}</div></i></Link>

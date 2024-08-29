@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Navbar.css'
-import logo from '../Assets/logo.png'
+import logo from '../../../Assets/logo.png'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../../context/ShopContext'
 import { motion,easeInOut, AnimatePresence } from 'framer-motion'

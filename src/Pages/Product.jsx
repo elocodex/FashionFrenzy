@@ -15,7 +15,7 @@ const Product = () => {
     e.id === Number(productId)
   )
   return (
-    <div>
+    <div style={{overflow:"hidden"}}>
       <BreadCrum product={product} />
       <ProductDisplay product={product} />
       {/* <DescriptionBox /> */}

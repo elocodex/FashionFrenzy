@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 import { ShopContext } from '../../context/ShopContext'
 import { motion,easeInOut, AnimatePresence } from 'framer-motion'
 import { Toaster, toast } from 'sonner'
-import sunIcon from '../Assets/sun.png'
-import moonIcon from '../Assets/crescent-moon.png'
+import sunIcon from '../../../Assets/sun.png'
+import moonIcon from '../../../Assets/crescent-moon.png'
 
 const Navbar = (props) => {
   

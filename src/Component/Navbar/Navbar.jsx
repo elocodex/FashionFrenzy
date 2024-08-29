@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Navbar.css'
-import logo from '../../../Assets/logo.png'
+import logo from '../Assets/logo.png'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../../context/ShopContext'
 import { motion,easeInOut, AnimatePresence } from 'framer-motion'
 import { Toaster, toast } from 'sonner'
-import sunIcon from '../../../Assets/sun.png'
-import moonIcon from '../../../Assets/crescent-moon.png'
+import sunIcon from '../Assets/sun.png'
+import moonIcon from '../Assets/crescent-moon.png'
 
 const Navbar = (props) => {
   
@@ -14,12 +14,13 @@ const Navbar = (props) => {
   const {getTotalCartItems} = useContext(ShopContext)
   const dropdownMenu = useRef(null)
   const twisticon = useRef(null)
+  const logoname = useRef(null)
   const [username,setUsername] = useState("")
 
-  const sun = useRef(null)
+  const moon2 = useRef(null)
   const moon = useRef(null)
 
-  
+
   function changeTheme(){
     props.body.current.classList.toggle('dark-theme')
     let theme = props.body.current.classList;
@@ -28,9 +29,11 @@ const Navbar = (props) => {
     if(theme == "dark-theme" ){
       statement = "Dark Mode Enabled"
       moon.current.src = sunIcon
+      moon2.current.src = sunIcon
     }else{
       statement = "Light Mode Enabled"
       moon.current.src = moonIcon
+      moon2.current.src = moonIcon
     }
 
     toast.message(
@@ -38,6 +41,10 @@ const Navbar = (props) => {
     )
   
   }
+  const prvent = (e)=>{
+    e.current.preventDefault()
+  }
+
   const dropdownToggle = ()=>{
     dropdownMenu.current.classList.toggle('nav-menu-visible')     
     dropdownMenu.current.style.transition = 2;
@@ -52,9 +59,6 @@ const Navbar = (props) => {
   const spanStyle={
     color: '#ff4141',
     fontWeight: '700',
-  }
-    const prvent = (e)=>{
-    e.current.preventDefault()
   }
 
     if(localStorage.getItem('auth-token')){
@@ -77,7 +81,7 @@ const Navbar = (props) => {
         <Link to='/' style={{display:'flex',alignItems:'center'}} >
           <img src={logo} alt="" />
         </Link>
-       <p><a onClick={prvent} style={linkStyle} href="/">FashionFrenzy</a></p>
+          <p><a ref={logoname} onClick={prvent} style={linkStyle} href="/">FashionFrenzy</a></p>
       </div>
       <div className="menu-cart">
         <motion.i ref={twisticon}  onClick={dropdownToggle}  class="fa-solid fa-caret-right menuicon"></motion.i>
@@ -96,9 +100,10 @@ const Navbar = (props) => {
           <div className='extras'>
             <Link style={linkStyle} to='/cart'><i class="fa-solid fa-cart-shopping"><div className="nav-card-count">{getTotalCartItems()}</div></i></Link>
             
-            <img ref={moon} className='theme-btn' onClick={changeTheme} src={moonIcon}  alt="" />
+            <img ref={moon2} className='theme-btn' onClick={changeTheme} src={moonIcon}  alt="" />
             {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:<Link style={linkStyle} to='/login'><button>Login</button></Link>}
           </div>
+          
         </motion.ul>
         </AnimatePresence>
         <div className="nav-login-cart">

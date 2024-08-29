@@ -6,14 +6,19 @@ import { motion } from 'framer-motion'
 
 const ShopCategory = (props) => {
   const {allProduct} = useContext(ShopContext)
+  let category = props.category.toUpperCase() + "'S"
   return (
     <motion.div
     initial={{opacity:0}}
     whileInView={{opacity:1}}
     transition={{duration:1}}
+    style={{overflow:"hidden"}}
     className='shop-category'>
       <img className='shopcategory-banner' src={props.banner} alt="" />
 
+      <div className="header">
+        <h2> {category} PRODUCT LIST</h2>
+      </div>
       <div className="products">
         <div className="shopcategory-products">
           {allProduct.map((item,i)=>{

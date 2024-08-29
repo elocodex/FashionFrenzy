@@ -22,24 +22,26 @@
     padding-left: 80px;
     text-transform: capitalize;
     background-color: var(--background);
-    margin-top: 100px;
+    margin-top: 95px;
 }
 @media (max-width: 1000px) {
     .breadcrum{
       font-size: 18px;
       padding: 10px 35px;
+      margin-top: 82px;
+      background: yellow;
     }
     .breadcrum img{
         width: 5px;
         height: 20px;
     }
   }
-@media (max-width: 650px) {
+@media (max-width: 730px) {
     .breadcrum{
-        font-size: 15px;
-        /* background-color: red; */
-        width:89.6%;
-      padding: 10px 25px;
+      margin-top: 70px;
+      font-size: 15px;
+      background-color: red;
+      padding: 10px 20px;
     }
 }
 @media (max-width: 650px) {

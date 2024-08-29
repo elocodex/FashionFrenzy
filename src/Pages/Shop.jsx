@@ -8,7 +8,7 @@ import PopularKids from '../Component/PopularKids/PopularKids'
 
 const Shop = () => {
   return (
-    <div>
+    <div style={{overflow:"hidden"}}>
       <Hero />
       <Popular />
       <PopularMen />

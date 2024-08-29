@@ -51,15 +51,15 @@
         max-width: 250px;
     }
 }
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
     .item{
         width: 100%;
     }
     .item img{
         width: 80%;
-        max-height: 600px;
+        max-height: 400px;
     }
     .item p{
-        max-width: 500px;
+        max-width: 300px;
     }
 }

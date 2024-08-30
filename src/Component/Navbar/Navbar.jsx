@@ -105,13 +105,13 @@ const Navbar = (props) => {
             <li onClick={()=>{setMenu("shop")}}><Link style={linkStyle} to='/'>Shop </Link> {menu === "shop" ? <hr />:<></>}  </li>
             <li onClick={()=>{setMenu("mens")}}> <Link style={linkStyle} to='/mens'>Men </Link> {menu === "mens" ? <hr />:<></>}</li>
             <li onClick={()=>{setMenu("womens")}}> <Link style={linkStyle} to='/womens'>Women </Link>{menu === "womens" ? <hr />:<></>}</li>
-            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kids</Link> {menu === "kids" ? <hr />:<></>}</li>
+            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kiids</Link> {menu === "kids" ? <hr />:<></>}</li>
 
           <div className='extras'>
-            <Link onClick={reverseToggle} style={linkStyle} to='/cart'><i class="fa-solid fa-cart-shopping"><div className="nav-card-count">{getTotalCartItems()}</div></i></Link>
+            <Link style={linkStyle} onClick={()=>{reverseToggle()}} to='/cart'><i class="fa-solid fa-cart-shopping"><div className="nav-card-count">{getTotalCartItems()}</div></i></Link>
             
             <img ref={moon2} className='theme-btn' onClick={changeTheme} src={moonIcon}  alt="" />
-            {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:<Link style={linkStyle} to='/login'><button>Login</button></Link>}
+            {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:<Link style={linkStyle} onClick={()=>{reverseToggle()}} to='/login'><button>Login</button></Link>}
           </div>
           
         </motion.ul>

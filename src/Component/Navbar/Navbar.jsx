@@ -105,7 +105,7 @@ const Navbar = (props) => {
             <li onClick={()=>{setMenu("shop")}}><Link style={linkStyle} to='/'>Shop </Link> {menu === "shop" ? <hr />:<></>}  </li>
             <li onClick={()=>{setMenu("mens")}}> <Link style={linkStyle} to='/mens'>Men </Link> {menu === "mens" ? <hr />:<></>}</li>
             <li onClick={()=>{setMenu("womens")}}> <Link style={linkStyle} to='/womens'>Women </Link>{menu === "womens" ? <hr />:<></>}</li>
-            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kiids</Link> {menu === "kids" ? <hr />:<></>}</li>
+            <li onClick={()=>{setMenu("kids")}}><Link style={linkStyle} to='/kids'>Kids</Link> {menu === "kids" ? <hr />:<></>}</li>
 
           <div className='extras'>
             <Link style={linkStyle} to='/cart'><i class="fa-solid fa-cart-shopping"><div className="nav-card-count">{getTotalCartItems()}</div></i></Link>

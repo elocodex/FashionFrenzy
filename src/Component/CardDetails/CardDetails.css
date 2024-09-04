@@ -183,4 +183,23 @@
     .add label{
         font-size: 14px;
     }
+    .info{
+        margin-top: 60px;
+        height: auto;
+        padding: 0 20px;
+    }
+    .info .top .cont label,.info .email .cont label{
+        display: none;
+    }
+    .info .top .cont,.info .email .cont{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .info .top .cont input,.info .email .cont input{
+        width: 90%;
+    }
+    .address .cont label{
+        display: none;
+    }
 }

@@ -20,6 +20,20 @@ const Navbar = (props) => {
   const moon2 = useRef(null)
   const moon = useRef(null)
 
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  if (moon.current && moon2.current) {
+    if (mediaQuery.matches) {
+      props.body.current.classList.add('dark-theme');
+      moon.current.src = sunIcon;
+      moon2.current.src = sunIcon;
+      localStorage.setItem('theme', 'dark');
+    } else {
+      props.body.current.classList.remove('dark-theme');
+      moon.current.src = moonIcon;
+      moon2.current.src = moonIcon;
+      localStorage.setItem('theme', 'light');
+    }
+  }
 
   function changeTheme(){
     props.body.current.classList.toggle('dark-theme')
@@ -30,10 +44,13 @@ const Navbar = (props) => {
       statement = "Dark Mode Enabled"
       moon.current.src = sunIcon
       moon2.current.src = sunIcon
+      localStorage.setItem('theme', 'dark');
+      
     }else{
       statement = "Light Mode Enabled"
       moon.current.src = moonIcon
       moon2.current.src = moonIcon
+      localStorage.setItem('theme', 'light');
     }
 
     toast.message(

@@ -42,6 +42,7 @@ To run this project locally:
 3. Run the development server:
    ```bash
    npm run dev
+4. Open your browser at http://localhost:5173 to view the project.   
 
 ## 📦 Deployment
 FashionFrenzy is deployed on Render. For deployment instructions, check the Render documentation.      

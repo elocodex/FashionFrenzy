@@ -36,3 +36,6 @@ To run this project locally:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/fashionfrenzy.git
+2. Install Dependencies:
+   ```bash
+   npm install   

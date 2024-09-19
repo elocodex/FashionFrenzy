@@ -38,4 +38,16 @@ To run this project locally:
    git clone https://github.com/yourusername/fashionfrenzy.git
 2. Install Dependencies:
    ```bash
-   npm install   
+   npm install
+3. Run the development server:
+   ```bash
+   npm run dev
+
+## 📦 Deployment
+FashionFrenzy is deployed on Render. For deployment instructions, check the Render documentation.      
+
+## ✨ Contributing
+Feel free to fork this repository, create a feature branch, and submit a pull request if you'd like to contribute. All contributions are welcome!
+
+## 📧 Contact
+For inquiries or support, you can reach me at ielowinds@gmail.com .
